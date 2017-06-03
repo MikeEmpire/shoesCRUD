@@ -1,0 +1,46 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			<img src="/assets/images/airjordan.png" alt="airjordanlogo" />
+			<h1> Get Your Shoes </h1>
+		</div>
+		<div class="col-xs-6 text-center" class="task">
+			<div class="row">
+				{{#each shoes}}
+					{{#if this.copped}}
+						<div class="col-xs-9 text-center">
+							<pre>{{this.id}}. {{this.shoes}}
+					</pre>
+							<!-- {{this.Date}} -->
+						</div>
+						<div class="col-xs-3 text-center">
+							<form method="POST" action="/shoes/update?_method=PUT" class="button-size">
+								<input input type="hidden" type="text" name="id" value= {{this.id}}><br>
+								<button type="submit" class="btn btn-default">Cop it!</button>
+							</form>
+						</div>
+					{{/if}}
+				{{/each}}
+			</div>
+		</div>
+		<div class="col-xs-6 text-center" class="task">
+			{{#each shoes}}
+				{{#if this.copped}}
+					<input class="form-control" type="text" placeholder="{{this.id}} . {{this.shoes}}" readonly>
+				{{/if}}
+			{{/each}}
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 text-center enter_section">
+			<form action="/shoes/create" method="POST">
+				<input type="text" class="form-control" name="shoe_name" value="" id="enter_text">
+				<button type="submit" class="btn btn-primary" id="text-enter-button">Submit</button>
+			</form>
+			<p>Enter a shoe you want to cop bro and Click the button.</p>
+		</div>
+	</div>
+</div>

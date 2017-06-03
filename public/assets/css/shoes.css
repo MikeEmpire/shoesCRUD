@@ -1,0 +1,17 @@
+.text-center
+ img {
+    width: 20%;
+}
+
+.col-xs-6.text-center {
+    padding-top: 10%;
+}
+
+button#text-enter-button {
+    margin-top: 10%;
+    border-radius: 10px;
+}
+
+p#info {
+    padding-top: 7%;
+}
